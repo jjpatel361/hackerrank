@@ -20,20 +20,30 @@ public class Grading {
 	 */
 	public static void main(String[] args) throws IOException {
 		Scanner s = new Scanner(new File("./data/grading.txt"));
-		s.nextInt();
+		int[] data = new int[s.nextInt()];
+		int c = 0;
 		while (s.hasNextInt()) {
-			int grade = s.nextInt();
-			int nearest = (int) Math.ceil(grade/5);
-			if(Math.abs(grade - nearest) <= 3){
-				System.out.println(nearest);
-			}else{
-				System.out.println(grade);
-			}
+			data[c] = s.nextInt();
+			c++;
 		}
 		s.close();
+		int[] graded = solve(data);
+		System.out.println(graded);
 		
-		
-		
+	}
+
+	private static int[] solve(int[] data) {
+		// TODO Auto-generated method stub
+		for (int i = 0; i < data.length; i++) {
+			int grade = data[i];
+			int nearest = grade + (5 - (grade%5));
+			if(Math.abs(grade - nearest) < 3 && grade >= 38){
+				data[i] = nearest;
+			}else{
+				data[i] = grade;
+			}
+		}
+		return data;
 	}
 
 }
