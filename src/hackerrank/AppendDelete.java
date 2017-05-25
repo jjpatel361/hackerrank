@@ -40,10 +40,18 @@ public class AppendDelete {
 			charpointer += 1;
 		}
 		
-		int add_operations_long = longword.substring(charpointer, longword.length()).length();
-		int delete_operations_small = smallword.substring(charpointer, smallword.length()).length();
-		if(add_operations_long + delete_operations_small <= operations){
-			System.out.println("Yes");
+		int add_oper = longword.substring(charpointer, longword.length()).length();
+		int delete_oper = smallword.substring(charpointer, smallword.length()).length();
+		int k_min = add_oper + delete_oper;
+		if(k_min <= operations){
+			// proceed 
+			if(k_min%2 == operations%2){
+				System.out.println("Yes");
+			}else if(longword.length() + smallword.length() - operations < 0 ){
+				System.out.println("Yes");
+			}else {
+				System.out.println("No");
+			}
 		}else{
 			System.out.println("No");
 		}
