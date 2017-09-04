@@ -38,6 +38,8 @@ public class ApplesAndOranges {
 			}
 			n--;
 		}
+		
+		sc.close();
 		System.out.println(applescount);	
 		System.out.println(orangescount);
 		
