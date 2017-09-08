@@ -1,4 +1,4 @@
-package data.structres.sll;
+package demo;
 
 import core.MyLinkedList;
 
