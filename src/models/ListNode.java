@@ -1,6 +1,4 @@
-package linkedlist;
-
-import org.omg.IOP.MultipleComponentProfileHelper;
+package models;
 
 public class ListNode {
 
