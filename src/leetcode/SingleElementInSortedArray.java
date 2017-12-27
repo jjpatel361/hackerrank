@@ -14,7 +14,7 @@ public class SingleElementInSortedArray {
 	 * 
 	 * */
 	public static void main(String[] args) {
-		int[] data = new int[]{1,1,2};
+		int[] data = new int[]{1,1,2,2,3,3,4,4,5,5,6};
 		int nonDuplicate = singleNonDuplicate(data);
 		System.out.println(nonDuplicate);
 		
@@ -22,26 +22,33 @@ public class SingleElementInSortedArray {
 	}
 	
 	public static int singleNonDuplicate(int[] nums) {
+		int start = 0;
+		int end = nums.length-1;
 		
-		int currentIndex = 0;
-		int result = 0;
-		int defaultCount = 1;
-		
-		while(currentIndex < nums.length -1) {
-			if(nums[currentIndex] == nums[currentIndex + 1]) {
-				defaultCount += 1;
-			}
-			if(defaultCount == 1) {
-				result = nums[currentIndex];
-				break;
-			}else {
-				currentIndex += 2;
-				result = nums[currentIndex];
-				defaultCount = 1;
+		while(start < end) {
+			// calculate mid 
+			int mid = (start + end )/2;
+			
+			if(mid % 2 == 1) mid--;
+			
+			if(nums[mid] != nums[mid+1]) {
+				end = mid;
+			} else {
+				start = mid + 2; 
 			}
 			
 		}
-		return result;
+			
+		return nums[start];
+		
+		/*		
+		for (int i = 0; i < nums.length; i+=2) {
+			if(nums.length == i+1 || nums[i] != nums[i+1]) {
+				result = nums[i];
+				break;
+			}
+		}
+		return result;*/
 	}
 
 }
