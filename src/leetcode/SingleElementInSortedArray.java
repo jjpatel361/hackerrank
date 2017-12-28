@@ -37,18 +37,8 @@ public class SingleElementInSortedArray {
 				start = mid + 2; 
 			}
 			
-		}
-			
+		}	
 		return nums[start];
-		
-		/*		
-		for (int i = 0; i < nums.length; i+=2) {
-			if(nums.length == i+1 || nums[i] != nums[i+1]) {
-				result = nums[i];
-				break;
-			}
-		}
-		return result;*/
 	}
 
 }

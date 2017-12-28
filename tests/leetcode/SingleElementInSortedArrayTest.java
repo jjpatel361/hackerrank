@@ -2,10 +2,8 @@ package leetcode;
 
 import static org.junit.Assert.*;
 
-import org.hamcrest.core.IsEqual;
 import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -48,12 +46,7 @@ public class SingleElementInSortedArrayTest {
 	@Test
 	public void test_ElementInLast() {
 		int repeatingNumber = SingleElementInSortedArray.singleNonDuplicate(new int[]{1,1,2,2,3,3,4,4,5,5,6});
-		System.out.println(repeatingNumber);
-		assertThat(
-					6, 
-						is(equalTo(repeatingNumber))
-					);
-		
+		assertThat(6, is(equalTo(repeatingNumber)));
 	}
 	
 
