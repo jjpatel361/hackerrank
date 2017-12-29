@@ -109,10 +109,10 @@ public class AddTwoNumbers {
 		 if(carry == 1) {
 			 result.val = 1;
 			 return result;
+		 }else {
+			 return result.next;
 		 }
 		 
-		 return result.next;
-	
 	 }
 	 
 	 
