@@ -3,12 +3,10 @@
  */
 package leetcode;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
-import java.io.File;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -18,7 +16,6 @@ import org.junit.Test;
 
 import helpers.TwoSumTestHelper;
 import helpers.TwoSumTestHelper.TwoSumTestCase;
-import junit.framework.Assert;
 
 /**
  * @author Jay Patel
