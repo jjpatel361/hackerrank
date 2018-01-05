@@ -3,8 +3,6 @@
  */
 package hackerrank;
 
-import java.util.Iterator;
-
 /**
  * @author Jay Patel
  *
