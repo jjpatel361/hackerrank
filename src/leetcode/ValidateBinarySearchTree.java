@@ -16,12 +16,17 @@ public class ValidateBinarySearchTree {
 	
 	public boolean isValidBST(TreeNode root) {
 		
-		ArrayList<Integer> sortedArray = inOrderTraversal(root);
-		boolean result = true;
+		/*Solution 1*/
+//		ArrayList<Integer> sortedArray = inOrderTraversal(root);
+//		boolean result = true;
+//		
+//		result = isSorted(sortedArray);
+//		
+//		return result;
 		
-		result = isSorted(sortedArray);
 		
-		return result;
+		/*Solution 2*/
+		return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
 		
     }
 
@@ -67,18 +72,18 @@ public class ValidateBinarySearchTree {
 	}
 	
 	
-	/*
-	public boolean isValidBST(TreeNode root, Integer min, Integer max) {
+	
+	public boolean isValidBST(TreeNode root, double min, double max) {
 		if(root == null) return true;
+		if(root.left == null && root.right == null) return true;
 		
-		if(min != null && root.val <= min) return false;
-		if(max != null && root.val >= max) return false;
+		if(root.val <= min || root.val >= max) return false;
 		
-		boolean is_left_subtree_valid = isValidBST(root.left, min, root.val);
-		boolean is_right_subtree_valid = isValidBST(root.right, root.val, max);
-		
-		return is_left_subtree_valid && is_right_subtree_valid;
-	}*/
+//		boolean is_left_subtree_valid = isValidBST(root.left, min, root.val);
+//		boolean is_right_subtree_valid = isValidBST(root.right, root.val, max);
+//		
+		return isValidBST(root.left, min, root.val) && isValidBST(root.right, root.val, max);
+	}
 
 	
 	

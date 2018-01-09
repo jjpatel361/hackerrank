@@ -1,17 +1,13 @@
 package hackerrank;
 
-import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.lang.reflect.Array;
+import java.util.Scanner;
 
 
 
@@ -135,6 +131,7 @@ private static String isValid(String data) {
 		
 }
 
+@SuppressWarnings("unused")
 private static boolean isStringValid(final char[] S){
         
         //If string contains less than two letters
