@@ -14,11 +14,17 @@ public class GroupAnagrams {
 	public static List<List<String>> groupAnagrams(String[] strs) {
 		
 		HashMap<String, List<String>> anagram_wordlist = new HashMap<String, List<String>>(strs.length);
+		
 		for (String word : strs) {
 			
-			char[] c = word.toCharArray();
-			Arrays.sort(c);
-			String sorted_string = new String(c);
+			char[] char_master = new char[26];
+			 
+			for (int i = 0; i < word.length(); i++) {
+				char_master[word.charAt(i) - 'a']++;
+			}
+			
+			String sorted_string = new String(char_master);
+			
 			if(anagram_wordlist.containsKey(sorted_string)) {
 				anagram_wordlist.get(sorted_string).add(word);
 			}else {
