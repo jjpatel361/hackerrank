@@ -3,8 +3,7 @@
  */
 package leetcode;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
 
 /**
  * @author Jay Patel
@@ -16,38 +15,32 @@ public class LongestSubStringWithoutRepeatingCharacters {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-//		System.out.println(lengthOfLongestSubstring("pwwkew"));
+		System.out.println(lengthOfLongestSubstring("pwwkew"));
 //		System.out.println(lengthOfLongestSubstring("bbbb"));
+
 	}
 
-	public static int lengthOfLongestSubstring(String s) {
+	public static int lengthOfLongestSubstring(String str) {
 		
-		if(s == null || "".equalsIgnoreCase(s)) return 0;
+		if(str == null || str.length() == 0 || "".equalsIgnoreCase(str)) return 0;
+
+		if(str.length() == 1) return 1;
 		
-		if(s.length() == 1) return 1;
-		
-		// pointers 
-		int current_start_ptr = 0, max_length = 0;
-		
-		while(current_start_ptr < s.length()) {
-			int index_ptr = current_start_ptr;
-			
-			Set<Character> explored = new HashSet<Character>();
-			
-			while(index_ptr < s.length()) {
-				if(!explored.contains(s.charAt(index_ptr))) {
-					// add to the set
-					explored.add(s.charAt(index_ptr));
-				}else {
-					break;
-				}
-				// max reached 
-				max_length = max_length < explored.size() ? explored.size() : max_length;
-				index_ptr++;
+		HashMap<Character, Integer> index_count = new HashMap<Character, Integer>(str.length());
+		int pointer = 0;
+		int start = 0;
+		int max_length = 0;
+		while(pointer < str.length()) {
+			char current_char = str.charAt(pointer);
+			if(index_count.containsKey(current_char) && index_count.get(current_char) >= start) {
+				start = index_count.get(current_char) + 1;
 			}
-			current_start_ptr++;
+			index_count.put(current_char, pointer);
+			max_length = Math.max(max_length, pointer - start + 1);
+			pointer++;
 		}
 		return max_length;
+		
 	}
 
 }

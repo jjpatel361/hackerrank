@@ -42,6 +42,12 @@ public class LongestSubStringWithoutRepeatingCharactersTest {
 	}
 	
 	@Test
+	public void testLengthOfLongestSubstring_BasicTest2_ShouldReturn2() {
+		int actual = LongestSubStringWithoutRepeatingCharacters.lengthOfLongestSubstring("abba");
+		Assert.assertEquals(2, actual);
+	}
+	
+	@Test
 	public void testLengthOfLongestSubstring_RepeatedLetters_ShouldPass() {
 		String teststr = "bbbbb";
 		int actual = LongestSubStringWithoutRepeatingCharacters.lengthOfLongestSubstring(teststr);
@@ -71,5 +77,6 @@ public class LongestSubStringWithoutRepeatingCharactersTest {
 		int actual = LongestSubStringWithoutRepeatingCharacters.lengthOfLongestSubstring("a");
 		Assert.assertEquals(1, actual);
 	}
+	
 
 }
