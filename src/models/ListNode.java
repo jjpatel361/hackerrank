@@ -4,13 +4,17 @@ public class ListNode {
 
 	public int val;
 	public ListNode next;
-	ListNode(int x) {val =x;}
+	public ListNode(int x) {val =x;}
 	
 	public ListNode(int val, ListNode nextNode) {
 		this.val = val;
 		this.next = nextNode;
 	}
 	
+	public ListNode() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public String toString() {
 		return this.next != null ? this.val + " = " + this.next.toString() : this.val + "";
@@ -68,6 +72,7 @@ public class ListNode {
 			l2 = (l2 == null) ? null : l2.next;
 			
 		}
+		
 		
 		return head.next;
 	}

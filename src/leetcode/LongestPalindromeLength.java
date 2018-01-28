@@ -3,9 +3,6 @@
  */
 package leetcode;
 
-import java.util.Arrays;
-import java.util.Vector;
-
 
 /**
  * @author Jay Patel
@@ -23,8 +20,6 @@ public class LongestPalindromeLength {
 			charcount[s.charAt(i)]++;
 		}
 			
-		//Arrays.sort(charcount);
-		
 		int max_length = 0;
 		boolean firstOddEncountered = false;
 		
