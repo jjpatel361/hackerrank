@@ -24,53 +24,21 @@ public class MergeSortedArray {
 		int[] expected = new int[]{1,2,4,0,0};
 		MergeSortedArray.merge(nums1, 2, nums2, 1);
 		
-		
-		
 	}	
 	
 	
 
 	public static void merge(int[] num1, int m, int[] num2, int n) {
-		int[] res = new int[num1.length];
 		
-		if (m == 0) {res = num2;}
-		if (n == 0) {res = num1;}
+		int start_num1_index = m - 1;
+		int start_num2_index = n - 1;
+		int current_last_index = m + n - 1;
+		while(start_num1_index > -1 && start_num2_index > -1) {
+			num1[current_last_index--] = num1[start_num1_index] > num2[start_num2_index] ? num1[start_num1_index--] : num2[start_num2_index--];
+		}
+		while(start_num2_index > -1) num1[current_last_index--] = num2[start_num2_index--];
 		
-		int k = 0, j = 0;
-		if(m > 0 && n > 0) {
-
-			for (int i = 0; i < (m + n); i++) {
-			
-				// take element nums1
-				if( k < m && j > n - 1 || num1[k] < num2[j]) {
-					res[i] = num1[k];
-					k++;
-					continue;
-				}
-				
-				// take element nums2
-				if(k > m - 1  && j < n || num1[k] > num2[j]) {
-					res[i] = num2[j];
-					j++;
-					continue;
-				}
-				
-				// put both elements in res
-				if(num1[k] == num2[j]) {
-					res[i] = num1[k];
-					i++;
-					res[i] = num2[j];
-					j++; k++;
-					continue;
-				}
-				
-				
-			}
-		}	
-		
-		System.out.println("Merged Result : " + Arrays.toString(res));
-		
-		nums1 = res;
+		System.out.println(Arrays.toString(num1));
 		
 	}
 }
