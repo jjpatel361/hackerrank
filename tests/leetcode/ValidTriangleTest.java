@@ -3,7 +3,7 @@
  */
 package leetcode;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -46,5 +46,5 @@ public class ValidTriangleTest {
 		int count = ValidTriangleNumber.triangleNumber(data);
 		assertEquals(4, count);
 	}
-
+	
 }

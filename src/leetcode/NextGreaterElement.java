@@ -4,8 +4,8 @@
 package leetcode;
 
 import java.util.Arrays;
-import java.util.*;
-import org.junit.Assert;
+import java.util.HashMap;
+import java.util.Stack;
 
 /**
  * @author Jay Patel

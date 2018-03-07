@@ -11,10 +11,7 @@ public class ListNode {
 		this.next = nextNode;
 	}
 	
-	public ListNode() {
-		// TODO Auto-generated constructor stub
-	}
-
+	
 	@Override
 	public String toString() {
 		return this.next != null ? this.val + " = " + this.next.toString() : this.val + "";

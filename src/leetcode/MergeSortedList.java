@@ -76,7 +76,6 @@ public class MergeSortedList {
 				
 			}
 		
-		
 			return fakeHead.next;
 	}
 
