@@ -3,6 +3,8 @@
  */
 package ctci;
 
+import java.util.BitSet;
+
 import models.TreeNode;
 
 /**
@@ -16,7 +18,17 @@ public class MinimalBST {
 		//TreeNode r = sortedArrayToBST(new int[]{-10,-3,0,5,9,10});
 		//TreeNode r = sortedArrayToBST(new int[]{});
 		//TreeNode r = sortedArrayToBST(new int[]{0});
-		TreeNode r = sortedArrayToBST(new int[]{-1, 0, 1, 2});
+		//@SuppressWarnings("unused")
+		//TreeNode r = sortedArrayToBST(new int[]{-1, 0, 1, 2});
+		/*BitSet b = new BitSet(5);
+		b.set(0, false);
+		b.set(1, false);
+		b.set(2, true);
+		b.set(3, false);
+		b.set(4, false);
+		System.out.println(b.size());*/
+		BitSet b = new BitSet(65);
+		System.out.println(b.size() + " length " + b.length());
 	}
 	
 	public static TreeNode sortedArrayToBST(int[] nums) {
